@@ -1,0 +1,107 @@
+.spoiler:after {
+  content: attr(content);
+  -webkit-transition: color 500ms;
+  -moz-transition: color 500ms;
+  -ms-transition: color 500ms;
+  -o-transition: color 500ms;
+  transition: color 500ms;
+  color: #aa1d68; }
+
+.spoiler:hover:after {
+  color: white; }
+
+.spoiler {
+  background: #aa1d68;
+  color: white; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.gallery {
+  display: flex; }
+
+.gallery-element {
+  background: #e6ebf6;
+  cursor: pointer;
+  display: block;
+  min-width: 200px;
+  padding: 10px;
+  width: 33%;
+  min-height: 200px;
+  margin: 5px;
+  border: gray 1px solid; }
+
+.gallery-element:hover {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition: all 100ms;
+  -moz-transition: all 100ms;
+  -ms-transition: all 100ms;
+  -o-transition: all 100ms;
+  transition: all 100ms; }
+
+* {
+  font-family: 'Montserrat', sans-serif !important; }
+
+.content {
+  padding: 30px;
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+  min-width: 600px; }
+
+h1 {
+  font-size: 2em;
+  margin: 5px; }
+
+.spacer {
+  height: 50px; }
+
+a {
+  color: inherit;
+  text-decoration: inherit; }
+
+/*# sourceMappingURL=main.css.map */
