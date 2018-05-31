@@ -1,0 +1,28 @@
+.gallery {
+  display: flex;
+}
+
+.gallery-element {
+  background: #e6ebf6;
+  cursor: pointer;
+  display: block;
+  min-width: 200px;
+  padding: 10px;
+  width: 33%;
+  min-height: 200px;
+  margin: 5px;
+  border: gray 1px solid;
+}
+
+.gallery-element:hover {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition: all 100ms;
+  -moz-transition: all 100ms;
+  -ms-transition: all 100ms;
+  -o-transition: all 100ms;
+  transition: all 100ms;
+}

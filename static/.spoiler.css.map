@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,cAAe;EACb,OAAO,EAAE,aAAa;EACtB,kBAAkB,EAAE,WAAW;EAC/B,eAAe,EAAE,WAAW;EAC5B,cAAc,EAAE,WAAW;EAC3B,aAAa,EAAE,WAAW;EAC1B,UAAU,EAAE,WAAW;EACvB,KAAK,EATM,OAAO;;AAapB,oBAAqB;EACnB,KAAK,EAbM,KAAK;;AAgBlB,QAAS;EACP,UAAU,EAlBC,OAAO;EAmBlB,KAAK,EAlBM,KAAK",
+"sources": [".spoiler.scss"],
+"names": [],
+"file": ".spoiler.css"
+}

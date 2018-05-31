@@ -1,0 +1,29 @@
+@import ".spoiler";
+@import ".reset";
+@import ".gallery";
+
+* {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.content {
+  padding: 30px;
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+  min-width: 600px;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 5px;
+}
+
+.spacer {
+  height: 50px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}

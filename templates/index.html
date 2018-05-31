@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block body %}
+    <h1>Hey, You!</h1>
+    <p>I am Roman Gr&auml;f</p>
+    <p>I am a programmer!</p>
+    <p>I do things for you!</p>
+    <p>As long as it is not webdesign, I will program nearly anything for you</p>
+    <div class="spacer"></div>
+    <h1>Projects</h1>
+    <div class="gallery">
+        <a href="{{ url_for("projects", project_name="website") }}">
+            <div class="gallery-element">
+                This website
+            </div>
+        </a>
+        <div class="gallery-element">
+            Discord Bots
+        </div>
+        <div class="gallery-element">
+            LOGL
+        </div>
+    </div>
+
+{% endblock %}
+{% block title %}
+    Roman Gr&auml;f
+{% endblock %}

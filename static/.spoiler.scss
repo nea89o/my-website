@@ -1,0 +1,21 @@
+$spoiler-bg: #aa1d68;
+$spoiler-fg: white;
+.spoiler:after {
+  content: attr(content);
+  -webkit-transition: color 500ms;
+  -moz-transition: color 500ms;
+  -ms-transition: color 500ms;
+  -o-transition: color 500ms;
+  transition: color 500ms;
+  color: $spoiler-bg;
+
+}
+
+.spoiler:hover:after {
+  color: $spoiler-fg;
+}
+
+.spoiler {
+  background: $spoiler-bg;
+  color: $spoiler-fg;
+}
