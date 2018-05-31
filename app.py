@@ -14,8 +14,11 @@ class Project(JsonSerializable):
     link: str
 
 
-with open('projects.json') as handle:
-    project_data: List[Project] = from_json(json.load(handle), List[Project])
+try:
+    with open('projects.json') as handle:
+        project_data: List[Project] = from_json(json.load(handle), List[Project])
+except:
+    project_data = []
 
 
 @app.route('/projects/<project_name>')
