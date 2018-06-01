@@ -1,0 +1,22 @@
+{% set project = empty_project %}
+<p>
+    <label for="id">Id</label><input name="id" id="id" value="{{ project.id }}"
+        {% if id_disabled %}
+                                     disabled="disabled"
+        {% endif %}
+>
+</p>
+<p>
+    <label for="name">Name</label><input id="name" name="name" value="{{ project.name }}">
+</p>
+<p>
+    <label for="summary">Summary</label><input id="summary" name="summary" value="{{ project.summary }}">
+</p>
+<p>
+    Description:<br>
+    <textarea name="description" form="form" style="width: 100%; height: 400px;" title="description"
+              id="description">{{ project.description }}</textarea>
+</p>
+<p>
+    <label for="link">Link</label><input name="link" id="link" value="{{ project.link }}">
+</p>

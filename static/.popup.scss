@@ -1,0 +1,23 @@
+.popup {
+  animation-name: popup;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+  animation-fill-mode: forwards;
+}
+
+@keyframes popup {
+  0% {
+    opacity: 100%;
+  }
+
+  33% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

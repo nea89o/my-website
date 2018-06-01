@@ -1,0 +1,15 @@
+<div class="gallery">
+    {% for project in projects %}
+        <a href="{{ url_for("projects", project_name=project.id) }}">
+            <div class="gallery-element">
+                {{ project.summary }}
+            </div>
+        </a>
+    {% endfor %}
+    <a href="https://github.com/romangraef">
+        <div class="gallery-element">
+            And many more on Github
+        </div>
+    </a>
+</div>
+

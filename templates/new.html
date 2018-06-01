@@ -1,0 +1,8 @@
+{% extends"base.html" %}
+{% block body %}
+    <form id="form" action="{{ url_for('new_project') }}" method="post">
+        {% set id_disabled = False %}
+        {% include "project_fields.html" %}
+        <input type="submit" value="Create">
+    </form>
+{% endblock %}

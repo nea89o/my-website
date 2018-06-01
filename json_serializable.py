@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
 from enum import Enum
-from typing import Dict, Type, List
+from typing import Dict, Type, List, Union
 
 
 def from_json(data, cls: Type):
@@ -49,7 +49,7 @@ def prepare_json(obj):
 
 class JsonSerializable(object):
     @classmethod
-    def load(cls, data):
+    def load(cls, data: Union[str, dict]):
         if isinstance(data, str):
             data = json.loads(data)
         return from_json(data, cls)

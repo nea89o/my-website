@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block body %}
+    <form method="post" action="{{ url_for('check_login') }}">
+        <p style="color: red;">Admin access only</p>
+        <p>
+            <label for="user">Username</label>
+            <input id="user" name="user" disabled="disabled" value="admin">
+        </p>
+        <p>
+            <label for="pass">Password</label>
+            <input id="pass" name="pass" placeholder="Password">
+        </p>
+        <p>
+            <input type="submit" value="Login">
+        </p>
+    </form>
+{% endblock %}

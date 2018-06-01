@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+    {% set id_disabled = True %}
+    {% include "project_fields.html" %}
+    <p>
+        <button onclick="save_changes()">Save changes</button>
+    </p>
+    <script src="{{ url_for('static', filename="edit.js") }}"></script>
+{% endblock %}
