@@ -2,6 +2,7 @@
 {% block body %}
     <form id="form" action="{{ url_for('new_project') }}" method="post">
         {% set id_disabled = False %}
+        {% set project = empty_project   %}
         {% include "project_fields.html" %}
         <input type="submit" value="Create">
     </form>

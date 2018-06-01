@@ -69,7 +69,7 @@ table {
   padding: 10px;
   width: 32%;
   min-height: 200px;
-  margin: 0.8%;
+  margin: 0.6%;
   border: gray 1px solid; }
 
 .gallery-element:hover {
@@ -89,7 +89,7 @@ table {
   animation-duration: 6s;
   animation-iteration-count: 1;
   position: fixed;
-  bottom: 10px;
+  bottom: 60px;
   text-align: center;
   animation-fill-mode: forwards; }
 
@@ -120,5 +120,21 @@ h1 {
 a {
   color: inherit;
   text-decoration: inherit; }
+
+.footer {
+  border-top: 1px black solid;
+  bottom: 0;
+  position: fixed;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  background: #e2e1e1; }
+
+body {
+  padding-bottom: 50px; }
+
+b {
+  font-weight: 500; }
 
 /*# sourceMappingURL=main.css.map */

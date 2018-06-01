@@ -7,3 +7,6 @@
     </p>
     <script src="{{ url_for('static', filename="edit.js") }}"></script>
 {% endblock %}
+{% block footer %}
+    &bullet; <a href="{{ url_for('projects', project_name=project.id) }}">Back to project</a>
+{% endblock %}

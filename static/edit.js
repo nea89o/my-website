@@ -1,6 +1,6 @@
 function save_changes() {
     let summary = $("#summary").val();
-    let description = $("#description").text();
+    let description = $("#description").val();
     let link = $("#link").val();
     let name = $("#name").val();
     $.ajax({

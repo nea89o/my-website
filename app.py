@@ -37,7 +37,8 @@ def check_password(password) -> bool:
 def inject():
     return {
         'projects': from_json(db.all(), List[Project]),
-        'empty_project': Project()
+        'empty_project': Project(),
+        'admin': session.get('logged_in', False)
     }
 
 
@@ -134,6 +135,20 @@ def edit_project_data(project_name):
 @app.route('/projects/<project_name>/')
 def projects(project_name):
     return render_template('project.html', project=find_project(project_name))
+
+
+@app.route('/projects/<project_name>/delete/', methods=['GET'])
+@require_admin()
+def delete_project(project_name):
+    return render_template('delete.html', project=find_project(project_name))
+
+
+@app.route('/projects/<project_name>/delete/', methods=['POST'])
+@require_admin()
+def delete_project_confirm(project_name):
+    Q = Query()
+    db.remove(Q.id == project_name.lower())
+    return redirect('/')
 
 
 @app.route('/')

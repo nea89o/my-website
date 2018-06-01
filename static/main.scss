@@ -28,3 +28,22 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+
+.footer {
+  border-top: 1px black solid;
+  bottom: 0;
+  position: fixed;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  background: #e2e1e1;
+}
+
+body {
+  padding-bottom: 50px;
+}
+
+b {
+  font-weight: 500;
+}

@@ -1,0 +1,12 @@
+{% extends"base.html" %}
+{% block body %}
+    <p>Do you really want to delete the project <b>{{ project.name }}</b></p>
+    <form action="." method="post">
+        <p>
+            <a href="{{ url_for('projects', project_name=project.id) }}">
+                No
+            </a>
+            <input style="color: red;" type="submit" value="Yes">
+        </p>
+    </form>
+{% endblock %}

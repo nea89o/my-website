@@ -16,5 +16,19 @@
         No content found. THIS IS AN ERROR
     {% endblock %}
 </div>
+<div class="footer">
+    <a href="/">Home</a>
+    &bullet;
+    {% if admin %}
+        <a href="{{ url_for('logout') }}">Admin logout</a>
+        &bullet;
+        <a href="{{ url_for('new_project_form') }}">New Project</a>
+        {% block admin_footer %}{% endblock %}
+    {% else %}
+        <a href="{{ url_for('login') }}">Admin login</a>
+    {% endif %}
+    {% block footer %}
+    {% endblock %}
+</div>
 </body>
 </html>
