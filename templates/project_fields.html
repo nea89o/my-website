@@ -19,3 +19,8 @@
 <p>
     <label for="link">Link</label><input name="link" id="link" value="{{ project.link }}">
 </p>
+<p>
+    <label for="featured">Featured</label><input name="featured" id="featured" type="checkbox"
+                                                 {% if project.featured %}checked="checked"{% endif %}>
+</p>
+

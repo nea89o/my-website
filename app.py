@@ -20,10 +20,13 @@ class Project(JsonSerializable):
     link: str
     summary: str
     id: str
+    featured: bool
 
-    def __init__(self, *, name: str = '', description: str = '', link: str = '', summary: str = '', id: str = ''):
+    def __init__(self, *, name: str = '', description: str = '', link: str = '', summary: str = '', id: str = '',
+                 featured: bool = False):
         self.name = name
         self.id = id
+        self.featured = featured
         self.summary = summary
         self.liink = link
         self.description = description
@@ -104,13 +107,14 @@ def new_project():
     summary = request.form.get('summary')
     description = request.form.get('description')
     link = request.form.get('link')
+    featured = request.form.get('featured') == 'on'
     db.insert({
         'name': name,
         'id': post_id,
         'summary': summary,
         'description': description,
         'link': link,
-        'featured': 0,
+        'featured': featured,
     })
     return redirect(url_for('projects', project_name=post_id))
 
@@ -129,10 +133,12 @@ def edit_project_data(project_name):
     description = request.form.get('description')
     link = request.form.get('link')
     name = request.form.get('name')
+    featured = request.form.get('featured') == 'true'
     project['name'] = name
     project['link'] = link
     project['description'] = description
     project['summary'] = summary
+    project['featured'] = featured
     db.write_back([project])
     return jsonify({})
 
@@ -158,7 +164,7 @@ def delete_project_confirm(project_name):
 
 @app.route('/')
 def index():
-    return render_template('index.html', projects=from_json(db.search(Query().featured == 1), List[Project]))
+    return render_template('index.html', projects=from_json(db.search(Query().featured == True), List[Project]))
 
 
 app.secret_key = os.environ.get('app_secret', '')
