@@ -36,7 +36,6 @@ def check_password(password) -> bool:
 @app.context_processor
 def inject():
     return {
-        'projects': from_json(db.all(), List[Project]),
         'empty_project': Project(),
         'admin': session.get('logged_in', False),
         'no_login': False,
@@ -83,6 +82,11 @@ def find_project(name) -> Document:
     return matches[0]
 
 
+@app.route('/projects/')
+def list_all_projects():
+    return render_template("gallery_all.html", projects=from_json(db.all(), List[Project]))
+
+
 @app.route('/projects/new/')
 @require_admin()
 def new_project_form():
@@ -92,9 +96,8 @@ def new_project_form():
 @app.route('/projects/new/', methods=['POST'])
 @require_admin()
 def new_project():
-    id = request.form.get('id')
-    Q = Query()
-    matches = db.search(Q.id == id.lower())
+    post_id = request.form.get('id')
+    matches = db.search(Query().id == post_id.lower())
     if len(matches) != 0:
         abort(400)
     name = request.form.get('name')
@@ -103,12 +106,13 @@ def new_project():
     link = request.form.get('link')
     db.insert({
         'name': name,
-        'id': id,
+        'id': post_id,
         'summary': summary,
         'description': description,
         'link': link,
+        'featured': 0,
     })
-    return redirect(url_for('projects', project_name=id))
+    return redirect(url_for('projects', project_name=post_id))
 
 
 @app.route('/projects/<project_name>/edit/', methods=['GET'])
@@ -154,7 +158,7 @@ def delete_project_confirm(project_name):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', projects=from_json(db.search(Query().featured == 1), List[Project]))
 
 
 app.secret_key = os.environ.get('app_secret', '')
