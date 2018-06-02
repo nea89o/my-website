@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block body %}
-    <form method="post" action="{{ url_for('check_login') }}">
+    <form method="post" action="{{ url_for('check_login') }}?return_url={{ return_url }}">
         <p style="color: red;">Admin access only</p>
         <p>
             <label for="user">Username</label>

@@ -25,7 +25,11 @@
         <a href="{{ url_for('new_project_form') }}">New Project</a>
         {% block admin_footer %}{% endblock %}
     {% else %}
-        <a href="{{ url_for('login') }}">Admin login</a>
+        {% if no_login %}
+            <a href="{{ return_url }}">Go back</a>
+        {% else %}
+            <a href="{{ url_for('login') }}?return_url={{ request.path }}">Admin login</a>
+        {% endif %}
     {% endif %}
     {% block footer %}
     {% endblock %}

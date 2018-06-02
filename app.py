@@ -38,13 +38,14 @@ def inject():
     return {
         'projects': from_json(db.all(), List[Project]),
         'empty_project': Project(),
-        'admin': session.get('logged_in', False)
+        'admin': session.get('logged_in', False),
+        'no_login': False,
     }
 
 
 @app.route('/admin/login/', methods=['GET'])
 def login():
-    return render_template('login.html')
+    return render_template('login.html', return_url=request.args.get('return_url', '/'), no_login=True)
 
 
 @app.route('/admin/login', methods=['POST'])
@@ -52,7 +53,7 @@ def check_login():
     if not check_password(request.form.get('pass')):
         return redirect(url_for('login'))
     session['logged_in'] = True
-    return redirect('/')
+    return redirect(request.args.get('return_url', '/'))
 
 
 @app.route('/admin/logout')
